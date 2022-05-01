@@ -5,33 +5,166 @@
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: hsl(245, 75%, 52%);
+    background-color: hsl(225, 100%, 94%);
+    background-image: url(../images/pattern-background-desktop.svg);
+    background-repeat: no-repeat;   
+    background-size: contain;
+    font-family: 'Red Hat Display', sans-serif;
+    color: hsl(224, 23%, 55%);
 }
 
 .main {
-    background-color: hsl(223, 47%, 23%)
+    background-color: red;
 }
+
+/***********
+*   CARD
+************/
 
 .card {
-    width: 300px;
-    height: 600px;
-    background-color: hsl(224, 23%, 55%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+    height: 700px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 30px 30px hsl(229, 89%, 89%);
 }
 
+.card .hero {
+    width: 450px;
+    height: 240px;   
+}
 
+.card .hero img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-radius: 20px 20px 0 0;    
+}
 
+.card .content-box {  
+    position: absolute;
+    bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 80%;
+    height: 60%; 
+    margin: 30px;    
+}
 
+.card .content-box .text-box h1 {   
+    display: flex;
+    justify-content: center;
+    margin: 30px 30px 10px 30px;    
+    color: hsl(223, 47%, 23%);
+    font-size: 29px;
+    font-weight: 900;
+}
 
+.card .content-box .text-box p {   
+    display: block;
+    text-align: center;
+    margin: 0px 15px 15px 15px;
+    font-weight: 500;
+    line-height: 1.7em;    
+}
 
+.card .content-box .plan-option-box {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;   
+    justify-content: center;    
+    align-items: center;
+    margin: 0px;    
+    background-color: hsl(225, 100%, 98%);
+    border-radius: 10px;
+}
 
+.card .content-box .plan-option-box .icon-music {
+    position: absolute;
+    left: 8%;
+    margin-right: 30px;
+}
 
+.card .content-box .plan-option-box .spans {
+    position: absolute;
+    left: 100px;
+    bottom: 26px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    line-height: 1.5em;
+}
 
+.card .content-box .plan-option-box .spans span:first-child {
+    color: hsl(223, 47%, 23%);
+    font-weight: 900;
+}
 
+.card .content-box .plan-option-box a {
+    position: absolute;
+    right: 6%;
+}
 
+.card .content-box .plan-option-box a:hover {
+    text-decoration: none;
+    opacity: 0.6;
+    transition: 300ms;
+}
 
+.card .content-box .order-box {
+    width: 100%;
+    height: 130px;
+}
 
+.card .content-box .order-box a {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px; 
+    text-align: center;
+    text-decoration: none;   
+}
+
+.card .content-box .order-box .pay-button {
+    width: 100%;
+    background-color: hsl(245, 75%, 52%);
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px hsl(245, 42%, 74%);
+}
+
+.card .content-box .order-box .pay-button:hover {
+    opacity: 0.7;
+    transition: 300ms;
+}
+
+.card .content-box .order-box .cancel {
+    margin: auto;
+    width: fit-content;
+    margin-top: 30px;
+    color: hsl(224, 23%, 55%);
+    font-weight: 900;
+    padding: 0;
+}
+
+.card .content-box .order-box .cancel:hover {
+    color: hsl(223, 47%, 23%);
+    transition: 300ms;
+}
 
 
 /****************
@@ -71,4 +204,64 @@ body {
     opacity: 1;
     cursor: text;
     transition: 500ms;
+}
+
+
+/****************
+*  MEDIA QUERY
+*****************/
+
+@media (max-width: 500px) {
+    
+    body {
+        background-image: url(../images/pattern-background-mobile.svg);
+    }
+
+    .card {
+        width: 325px;
+        height: 560px;
+    }
+
+    .card .hero {
+        width: 325px;
+    }
+
+    .card .content-box {
+        width: 85%;
+        bottom: 0;
+        font-size: 14px;
+    }
+
+    .card .content-box .text-box {
+        position: absolute;
+        bottom: 63%;
+    }
+
+    .card .content-box .text-box h1 {
+        margin-top: 10px;
+        font-size: 23px;
+    }
+
+    .card .content-box .plan-option-box {
+        height: 80px;
+    }
+
+    .card .content-box .plan-option-box .icon-music {
+        left: 6%;
+    }
+
+    .card .content-box .plan-option-box .spans {
+        bottom: 18px;
+        left: 80px;
+    }
+
+    .card .content-box .order-box {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .attribution {
+        width: min-content;
+    }
+    
 }
